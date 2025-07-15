@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import hLogo from '../../Images/h_logo.svg';
 import { CircleUser, UserLock, UserPlus, EllipsisVertical, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -21,13 +21,12 @@ const Navbar = () => {
 
                     {/* Right - Auth Section (Responsive) */}
                     <div className="d-flex align-items-center ms-auto order-lg-3">
-
                         {/* For md and above: Login & Register buttons */}
                         <div className="d-none d-md-flex align-items-center gap-2 me-2">
-                            <Link to="/login" className="btn btn-outline-primary btn-sm d-flex align-items-center">
+                            <Link to="/" className="btn btn-outline-primary btn-sm d-flex align-items-center primary-outline-button">
                                 <UserLock size={16} className="me-1" /> Login
                             </Link>
-                            <Link to="/register" className="btn btn-primary btn-sm d-flex align-items-center">
+                            <Link to="/signup" className="btn btn-primary btn-sm d-flex align-items-center primary-bg-button">
                                 <UserPlus size={16} className="me-1" /> Register
                             </Link>
                         </div>
@@ -47,12 +46,12 @@ const Navbar = () => {
 
                             <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
                                 <li>
-                                    <Link className="dropdown-item d-flex align-items-center" to="/login">
+                                    <Link className="dropdown-item d-flex align-items-center primary-color" to="/">
                                         <UserLock size={16} className="me-2" /> Login
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link className="dropdown-item d-flex align-items-center" to="/register">
+                                    <Link className="dropdown-item d-flex align-items-center bg-second-primary-color" to="/signup">
                                         <UserPlus size={16} className="me-2" /> Register
                                     </Link>
                                 </li>
@@ -81,19 +80,19 @@ const Navbar = () => {
                     >
                         <ul className="navbar-nav mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link active" to="/">Home</Link>
+                                <NavLink className="nav-link" to="/" end>Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/">Services</Link>
+                                <NavLink className="nav-link" to="/services">Services</NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/">About</Link>
+                                <NavLink className="nav-link" to="/about">About</NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/">Testimonials</Link>
+                                <NavLink className="nav-link" to="/testimonials">Testimonials</NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/">Call-to-action</Link>
+                                <NavLink className="nav-link" to="/call-to-action">Call-to-action</NavLink>
                             </li>
                         </ul>
                     </div>
