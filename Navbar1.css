@@ -1,0 +1,32 @@
+/* navbar style  */
+.main-navbar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-style {
+  width: 80%;
+  background-color: var(--light-pink-color);
+  margin: 9px 0px;
+  border-radius: 10px 10px;
+}
+
+
+/* common media query for smaller devices  */
+@media (max-width: 576px) {
+  .font-size-medium {
+    font-size: var(--font-size-default);
+  }
+
+  .signin-form {
+    background-color: var(--secondary-color);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+
+  .navbar-style {
+    width: 95% !important;
+  }
+}
