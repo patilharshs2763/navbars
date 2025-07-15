@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import hLogo from '../../Images/h_logo.svg';
 import { CircleUser, UserLock, UserPlus, EllipsisVertical, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -14,21 +15,21 @@ const Navbar = () => {
             <nav className="navbar navbar-expand-lg navbar-style">
                 <div className="container-fluid">
                     {/* Left - Logo */}
-                    <a className="navbar-brand" href="/">
+                    <Link className="navbar-brand" to="/">
                         <img src={hLogo} alt="H Logo" height={25} />
-                    </a>
+                    </Link>
 
                     {/* Right - Auth Section (Responsive) */}
                     <div className="d-flex align-items-center ms-auto order-lg-3">
 
                         {/* For md and above: Login & Register buttons */}
                         <div className="d-none d-md-flex align-items-center gap-2 me-2">
-                            <a href="/login" className="btn btn-outline-primary btn-sm d-flex align-items-center">
+                            <Link to="/login" className="btn btn-outline-primary btn-sm d-flex align-items-center">
                                 <UserLock size={16} className="me-1" /> Login
-                            </a>
-                            <a href="/register" className="btn btn-primary btn-sm d-flex align-items-center">
+                            </Link>
+                            <Link to="/register" className="btn btn-primary btn-sm d-flex align-items-center">
                                 <UserPlus size={16} className="me-1" /> Register
-                            </a>
+                            </Link>
                         </div>
 
                         {/* For small devices: Account Icon with Dropdown */}
@@ -46,14 +47,14 @@ const Navbar = () => {
 
                             <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
                                 <li>
-                                    <a className="dropdown-item d-flex align-items-center" href="/login">
+                                    <Link className="dropdown-item d-flex align-items-center" to="/login">
                                         <UserLock size={16} className="me-2" /> Login
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a className="dropdown-item d-flex align-items-center" href="/register">
+                                    <Link className="dropdown-item d-flex align-items-center" to="/register">
                                         <UserPlus size={16} className="me-2" /> Register
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -80,19 +81,19 @@ const Navbar = () => {
                     >
                         <ul className="navbar-nav mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="/">Home</a>
+                                <Link className="nav-link active" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/">Services</a>
+                                <Link className="nav-link" to="/">Services</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/">About</a>
+                                <Link className="nav-link" to="/">About</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/">Testimonials</a>
+                                <Link className="nav-link" to="/">Testimonials</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/">Call-to-action</a>
+                                <Link className="nav-link" to="/">Call-to-action</Link>
                             </li>
                         </ul>
                     </div>
